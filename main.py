@@ -63,7 +63,7 @@ def print_results(input_strings, output_strings,codigo):
     #Results in VHDL CODE
     print('\n====Resultados formato switch VHDL====\n')
     for input_str, output_str in zip(input_strings, output_strings):
-        print(f"when \"{input_str}\" => {codigo} <= \"{output_str}\"")
+        print(f"when \"{input_str}\" => {codigo} <= \"{output_str}\";")
 
 def save_to_file(input_strings, output_strings, input_file, codigo):
     """Save results to a new txt file in the same directory as the input file"""
@@ -84,7 +84,7 @@ def save_to_file(input_strings, output_strings, input_file, codigo):
             ##Escribir entradas como codigo
             txt_file.write("\n\n=======SWICTH VHDL==========\n")
             for input_str, output_str in zip(input_strings, output_strings):
-                txt_file.write(f" when \"{input_str}\" => {codigo} <= \"{output_str}\"\n")
+                txt_file.write(f"when \"{input_str}\" => {codigo} <= \"{output_str}\"\n;")
             
         
         print(f"\n\nSalida y codigo guardados en: {output_file}")
